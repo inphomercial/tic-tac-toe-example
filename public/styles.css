@@ -2,17 +2,15 @@ body {
 	font-family: 'Permanent Marker', cursive;
 }
 
-#root {
-	position: absolute;
-	margin: auto;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+.title {
+	font-size: 100px;
+	text-align: center;
 }
 
 .board {
 	padding: 200px;
+	margin: auto;
+	border-collapse: collapse;
 }
 
 /**
