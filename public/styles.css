@@ -1,0 +1,68 @@
+body {
+	font-family: 'Permanent Marker', cursive;
+}
+
+#root {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.board {
+	padding: 200px;
+}
+
+/**
+ * Top row (left middle right)
+ */
+.tl {
+	border-left: none;
+	border-top: none;
+}
+.tm {
+	border-top: none;
+}
+.tr {
+	border-top: none;
+	border-right: none;
+}
+
+/**
+ * Middle row (left middle right)
+ */
+.ml {
+	border-left: none;
+}
+.mr {
+	border-right: none;
+}
+
+/**
+ * Bottom row (left middle right)
+ */
+.bl {
+	border-bottom: none;
+	border-left: none;
+}
+.bm {
+	border-bottom: none;
+}
+.br {
+	border-right: none;
+	border-bottom: none;
+}
+
+td {
+	border: 3px solid black;
+	height: 100px;
+	width: 100px;
+	font-size: 65px;
+	text-align: center;
+}
+
+.hovering {
+	color: grey;
+}
