@@ -37,7 +37,11 @@ export default class TicTacToeController {
 	}
 
 	checkWinner() {
+		var results = this.model.hasWinner();
 
+		if (results) {
+			this.view.drawWinner(results);
+		}
 	}
 
 	changePlayer() {

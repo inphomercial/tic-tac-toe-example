@@ -27,4 +27,63 @@ export default class TicTacToeView {
 
 		this.node.innerHTML = boardString;
 	}
+
+	drawWinner(winner) {
+
+		// Top Row Win
+		if (winner.topL) {
+			let node = document.querySelectorAll("[data-x='0'][data-y='0']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.topM) {
+			let node = document.querySelectorAll("[data-x='1'][data-y='0']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.topR) {
+			let node = document.querySelectorAll("[data-x='2'][data-y='0']")[0];
+			node.classList.add('winner');
+		}
+		
+		// Middle Row Win	
+		if (winner.midL) {
+			let node = document.querySelectorAll("[data-x='0'][data-y='1']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.midM) {
+			let node = document.querySelectorAll("[data-x='1'][data-y='1']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.midR) {
+			let node = document.querySelectorAll("[data-x='2'][data-y='1']")[0];
+			node.classList.add('winner');
+		}
+
+		// Bottom Row Win	
+		if (winner.botL) {
+			let node = document.querySelectorAll("[data-x='0'][data-y='2']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.botM) {
+			let node = document.querySelectorAll("[data-x='1'][data-y='2']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.botR) {
+			let node = document.querySelectorAll("[data-x='2'][data-y='2']")[0];
+			node.classList.add('winner');
+		}
+
+		// Diagonal top to bot
+		if (winner.topL) {
+			let node = document.querySelectorAll("[data-x='0'][data-y='0']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.midM) {
+			let node = document.querySelectorAll("[data-x='1'][data-y='1']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.botR) {
+			let node = document.querySelectorAll("[data-x='2'][data-y='2']")[0];
+			node.classList.add('winner');
+		}
+	}
 }
