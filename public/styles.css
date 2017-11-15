@@ -68,3 +68,22 @@ td {
 .winner {
 	color: red;
 }
+
+.x {
+	position: absolute;
+    font-size: 80px;
+    left: 30%;
+    top: 32%;
+}
+
+.o-score, .x-score {
+	font-size: 32px;
+	text-align: center;
+}
+
+.o {
+	position: absolute;
+    font-size: 80px;
+    left: 67%;
+    top: 32%;
+}

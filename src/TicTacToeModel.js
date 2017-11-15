@@ -7,7 +7,7 @@ export default class TicTacToeModel {
 	constructor() {
 		this.board = [];
 		this.playerWinsX = 0;
-		this.playerWinsY = 0;
+		this.playerWinsO = 0;
 		this.player = PLAYER.X;
 
 		this.initBoard();
@@ -84,13 +84,25 @@ export default class TicTacToeModel {
 
 		// Diagonal top to bottom
 		if ((this.board[0][0] && this.board[1][1] && this.board[2][2]) == PLAYER.O ||
-		(this.board[0][0] && this.board[1][1] && this.board[2][2]) == PLAYER.X) {
-		winner.topL = true;
-		winner.midM = true;
-		winner.botR = true;
+			(this.board[0][0] && this.board[1][1] && this.board[2][2]) == PLAYER.X) {
+			winner.topL = true;
+			winner.midM = true;
+			winner.botR = true;
 		
-		return winner;
-	}
+			return winner;
+		}
+
+		// Diagonal bottom to top
+		if ((this.board[2][0] && this.board[1][1] && this.board[0][2]) == PLAYER.O ||
+			(this.board[2][0] && this.board[1][1] && this.board[0][2]) == PLAYER.X) {
+			winner.botL = true;
+			winner.midM = true;
+			winner.topR = true;
+
+			return winner;
+		}
+
+		this.playerWinsO++;
 
 		return false;
 	}

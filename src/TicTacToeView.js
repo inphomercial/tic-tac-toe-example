@@ -2,6 +2,8 @@
 export default class TicTacToeView {
 	constructor() {
 		this.node = document.getElementById('root');
+		this.xScore = document.getElementsByClassName('x-score')[0];
+		this.oScore = document.getElementsByClassName('o-score')[0];
 	}
 
 	render(model) {
@@ -26,6 +28,8 @@ export default class TicTacToeView {
 			</table>`;
 
 		this.node.innerHTML = boardString;
+		this.xScore.innerHTML = model.playerWinsX;
+		this.oScore.innerHTML = model.playerWinsO;
 	}
 
 	drawWinner(winner) {
@@ -82,6 +86,20 @@ export default class TicTacToeView {
 			node.classList.add('winner');
 		}
 		if (winner.botR) {
+			let node = document.querySelectorAll("[data-x='2'][data-y='2']")[0];
+			node.classList.add('winner');
+		}
+
+		// Diagonal bot to top
+		if (winner.botL) {
+			let node = document.querySelectorAll("[data-x='0'][data-y='2']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.midM) {
+			let node = document.querySelectorAll("[data-x='1'][data-y='1']")[0];
+			node.classList.add('winner');
+		}
+		if (winner.topR) {
 			let node = document.querySelectorAll("[data-x='2'][data-y='2']")[0];
 			node.classList.add('winner');
 		}
