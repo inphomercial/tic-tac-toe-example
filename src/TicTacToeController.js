@@ -8,6 +8,8 @@ export default class TicTacToeController {
 	constructor() {
 		this.model = new TicTacToeModel();
 		this.view = new TicTacToeView();
+	
+		// Setup LIstener
 
 		// Start by initializing the board
 		this.draw();
@@ -77,10 +79,17 @@ export default class TicTacToeController {
 		e.target.classList.remove('hovering');
 		e.target.innerHTML = "";
 	}
+
+	handleResetEvent() {
+		this.model.reset();
+		this.draw();
+	}
 	
 	setupEvents() {
+		var reset = document.getElementById('reset');
+		reset.addEventListener('click', this.handleResetEvent.bind(this));
+
 		var spaces = document.getElementsByTagName('td');
-	
 		for(var i = 0; i < spaces.length; i++) {
 			spaces[i].addEventListener('click', this.handleClickEvent.bind(this));
 			spaces[i].addEventListener('mouseover', this.handleMouseOverEvent.bind(this));

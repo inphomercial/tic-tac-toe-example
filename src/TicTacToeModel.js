@@ -21,6 +21,10 @@ export default class TicTacToeModel {
 		});
 	}
 
+	reset() {
+		this.initBoard();
+	}
+
 	getWinsY() {
 		return this.playerWinsY;
 	}

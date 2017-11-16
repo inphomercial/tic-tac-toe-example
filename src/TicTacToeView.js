@@ -1,7 +1,7 @@
 
 export default class TicTacToeView {
 	constructor() {
-		this.node = document.getElementById('root');
+		this.board = document.getElementById('board');
 		this.xScore = document.getElementsByClassName('x-score')[0];
 		this.oScore = document.getElementsByClassName('o-score')[0];
 	}
@@ -27,13 +27,12 @@ export default class TicTacToeView {
 				</tr>
 			</table>`;
 
-		this.node.innerHTML = boardString;
+		this.board.innerHTML = boardString;
 		this.xScore.innerHTML = model.playerWinsX;
 		this.oScore.innerHTML = model.playerWinsO;
 	}
 
 	drawWinner(winner) {
-
 		// Top Row Win
 		if (winner.topL) {
 			let node = document.querySelectorAll("[data-x='0'][data-y='0']")[0];
